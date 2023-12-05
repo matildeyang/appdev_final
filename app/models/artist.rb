@@ -2,12 +2,11 @@
 #
 # Table name: artists
 #
-#  id          :integer          not null, primary key
-#  name        :string
-#  songs_count :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  song_id     :integer
+#  id         :integer          not null, primary key
+#  name       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  song_id    :integer
 #
 class Artist < ApplicationRecord
   has_many  :songs, class_name: "Song", foreign_key: "artist_id", dependent: :destroy
